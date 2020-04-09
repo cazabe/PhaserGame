@@ -1,21 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Pandemic</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="game">
-    <img src="./pandemicGame.png" alt="pandemic">
-    
-    <div class="btnPandemic">
-    <a href="game.html" target="_blank"><span class='start-btn'>START</span></a>
-    </div>
-    </div>
+      <div class="game">
+        <img src="./pandemicGame.png" alt="pandemic" />
+
+        <div class="btnPandemic">
+          <a href="game.html" target="_blank"
+            ><span class="start-btn">START</span></a
+          >
+          <div id="console" style="margin-top: 30px;"></div>
+        </div>
+        
+      </div>
     </div>
 
-</body>
+    <script>
+      var intervalID = window.setInterval(updateScreen, 1000);
+      var c = document.getElementById("console");
+
+      var txt = [
+        "================================================",
+        "================================================",
+        "***********************","**********************",
+        "***********************","**********************",
+        "*******************","PANDEMIC","***************",
+        "***********************","**********************",
+        "***********************","**********************",
+        "================================================",
+        "================================================",
+        "THIS IS THE STORY OF A GIRL THAT LIVES THROUGH THE CORONA PANDEMY",
+        "30 YEARS HAS PASS SINCE THE PANDEMYC",
+        "AND NOW SHE IS 35 YEARS OLD AND THE PANDEMYC STILL LIVES",
+        "BUT SHE HAS THE OPPORTUNITY TO FIXED ALL.",
+        "================================================",
+        "================================================",
+        "VALEN WAS JUST A CHILD WHEN THE CORONA PANDEMYC STARTED",
+        "HER MUM WAS A DOCTOR AND HER DAD A SCIENTIST",
+        "THEY BOTH FIGHT WITH THE PANDEMIC FOR MANY YEARS BUT NEVER FOUND A CURE FOR IT",
+        "NOW THAT YEARS HAS PASS BY",
+        "VALEN HAS FOUND A CURE BUT SOME PEOPLE SAID IS TO LATE,",
+        "THE PANDEMIC HAS ALMOST WIPE ALL HUMANITY.",
+        "================================================",
+        "================================================",
+        "BUT LOOKING At HERS FATHER OFICE SHE FOUND A PLANE FOR SOMETHING",
+        "IT LOOKS LIKE THE BLUEPRINTS OF A MACHINE",
+        "AND IN THE BOTTOM THERE IS A NAME AND SAYS",
+        "CONTACT DOCTOR CHUPAYO!!.",
+        "================================================",
+        "================================================",
+        "SHE TAKES THE BLUEPRINT AND MANAGE TO FIND THE DOCTOR",
+        "CHUPAYO WAS AN OLD FRIEND OF HER FATHER ",
+        "AND THOSE BLUEPRINT WHERE FOR A TIME MACHINE.",
+        "================================================",
+        "================================================",
+        "DOCTOR CHUPAYO NEDEED THOSE BLUEPRINTS TO FINISH THE TIME MACHINE",
+        "NOW HE CAN BUILD IT AND VALEN HAS A CHANCE TO TRAVEL IN TIME",
+        "WITH THE CURE AND SAVE HUMANITY",
+        "================================================",
+        "ARE YOU READY FOR THE ADVENTURE",
+        "================================================",
+       
+      ];
+
+      var docfrag = document.createDocumentFragment();
+
+      function updateScreen() {
+        //Shuffle the "txt" array
+        txt.push(txt.shift());
+        //Rebuild document fragment
+        txt.forEach(function(e) {
+          var p = document.createElement("p");
+          p.textContent = e;
+          docfrag.appendChild(p);
+        });
+        //Clear DOM body
+        while (c.firstChild) {
+          c.removeChild(c.firstChild);
+        }
+        c.appendChild(docfrag);
+      }
+    </script>
+  </body>
 </html>
