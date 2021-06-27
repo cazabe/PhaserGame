@@ -1,5 +1,5 @@
 # PhaserGame
-This was a game created for a game jam, the game is made with phaser wich is a game framework made with javascript.
+This was my first game ever created, it was for a game jam, the game is made with phaser wich is a game framework made with javascript.
 
 1)node must be installed
 
