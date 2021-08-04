@@ -1,10 +1,26 @@
 # PhaserGame
 This was my first game ever created, it was for a game jam, the game is made with phaser wich is a game framework made with javascript.
 
-1)node must be installed
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
 
-2)dependencies
-npm install
+## Technologies
+Project is created with:
+* npm version: 6.11.3
+* phaser version: 3.22.0
+	
+## Setup
+To run this project, install it locally using npm
 
-3)run game
-in terminal node index.js
+```
+$ cd ../project
+$ npm install
+```
+
+## Run game
+```
+$ in terminal put node index.js
+$ open on browser: http://localhost:3000
+```
